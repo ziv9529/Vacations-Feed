@@ -4,7 +4,7 @@ Vacations Feed
 
 ## Description
 
-On the site, you can follow your favorite vacations and watch them.
+On the site, you can follow your favorite vacations and watch them.<br>
 You also can see which destination has the most followers from all the site users! 
 
 ## Getting Started
@@ -47,4 +47,4 @@ docker compose up
 ## Authors
 
 Ziv Ashkenazi 
-[@ziv-ashkenazi](https://www.linkedin.com/in/ziv-ashkenazi-a75899223/details/skills/)
+[@Linkdin](https://www.linkedin.com/in/ziv-ashkenazi-a75899223/details/skills/)
