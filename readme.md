@@ -47,4 +47,4 @@ docker compose up
 ## Authors
 
 Ziv Ashkenazi 
-[@ziv-ashkenazi-a75899223](https://www.linkedin.com/in/ziv-ashkenazi-a75899223/details/skills/)
+[@ziv-ashkenazi](https://www.linkedin.com/in/ziv-ashkenazi-a75899223/details/skills/)
