@@ -1,0 +1,21 @@
+.logoutBtn {
+    text-decoration: none;
+    background-color: rgba(25, 118, 210, 0.04);
+    border: 2px solid #ca3e3e;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    border-radius: 4px;
+    user-select: none;
+    vertical-align: middle;
+    cursor: pointer;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    color: "red";
+}
