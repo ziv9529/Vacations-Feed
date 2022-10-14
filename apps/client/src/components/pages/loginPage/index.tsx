@@ -7,6 +7,7 @@ import { store } from '../../../store';
 import { ACTIONS } from '../../../store/actions';
 import { loginAction } from '../../../store/asyncFunctions/auth';
 import { handleMouseDownPassword, initialLoginState, isLoginError, isLoginFormValid, LoginState } from './helpers';
+import "./login.css"
 
 export function LoginPage() {
     const navigate = useNavigate()
@@ -49,7 +50,7 @@ export function LoginPage() {
             {
                 (isUserLoggin?.token && isUserLoggin?.user_id)
                     ? <Typography sx={{ m: 1 }} variant='h4' component='div'>
-                        User already logged in please move to <Link to={"/"}>Home</Link> page!
+                        User already logged in please move to <Link className='linkStyle' to={"/"}>Home</Link> page!
                     </Typography>
                     :
                     <>
