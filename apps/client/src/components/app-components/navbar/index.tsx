@@ -44,7 +44,7 @@ export function AppNavBar() {
         <StyledAppBar position="static" color="inherit">
             {
                 authReducer?.user_first_name
-                    ? <Typography>
+                    ? <Typography className="navLink">
                         welcome {authReducer?.user_first_name}
                     </Typography>
                     : null
@@ -52,7 +52,7 @@ export function AppNavBar() {
             {routingConfiguration.map((route: RouteConfig) => (
                 <MenuItem key={route.key}>
                     <Typography textAlign="center">
-                        <Link to={route.path}>{route.label}</Link>
+                        <Link className="navLink" to={route.path}>{route.label}</Link>
                     </Typography>
                 </MenuItem>
             ))}
@@ -61,7 +61,7 @@ export function AppNavBar() {
                     ?
                     <MenuItem key={"reports"}>
                         <Typography textAlign="center">
-                            <Link to={"/reports"}>Reports</Link>
+                            <Link className="navLink" to={"/reports"}>Reports</Link>
                         </Typography>
                     </MenuItem>
                     : null
@@ -71,12 +71,16 @@ export function AppNavBar() {
                     ?
                     <MenuItem key={"management"}>
                         <Typography textAlign="center">
-                            <Link to={"/management"}>Management</Link>
+                            <Link className="navLink" to={"/management"}>Management</Link>
                         </Typography>
                     </MenuItem>
                     : null
             }
-            <button className="logoutBtn" onClick={logout}> LogOut </button>
+            <MenuItem onClick={logout}>
+                <Typography className="navLink" textAlign="center">
+                    Logout
+                </Typography>
+            </MenuItem>
         </StyledAppBar>
     )
 

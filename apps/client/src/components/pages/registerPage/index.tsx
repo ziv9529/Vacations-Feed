@@ -7,7 +7,7 @@ import { store } from '../../../store';
 import { ACTIONS } from '../../../store/actions';
 import { registerAction } from '../../../store/asyncFunctions/auth';
 import { handleMouseDownPassword, initialRegisterState, isRegisterError, isRegisterFormValid, RegisterState } from './helpers';
-
+import "../loginPage/login.css"
 export function RegisterPage() {
     const navigate = useNavigate()
 
@@ -51,7 +51,7 @@ export function RegisterPage() {
             {
                 (isUserLoggin?.token && isUserLoggin?.user_id)
                     ? <Typography sx={{ m: 1 }} variant='h4' component='div'>
-                        User already logged in please move to <Link to={"/"}>Home</Link> page!
+                        User logged in. please move to <Link className='linkStyle' to={"/"}>Home</Link> page. <br /> To register another user please logout.
                     </Typography>
                     : <>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>

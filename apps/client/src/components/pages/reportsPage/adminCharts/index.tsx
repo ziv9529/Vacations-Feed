@@ -24,7 +24,15 @@ export function VacationsReport(props: { reportData: any }) {
               display: true,
               text: 'Vacations Report',
             },
+
           },
+          scales: {
+            y: {
+              ticks: {
+                stepSize: 1
+              }
+            }
+          }
         }
       }
         data={
@@ -34,7 +42,7 @@ export function VacationsReport(props: { reportData: any }) {
               {
                 label: 'Follow count',
                 data,
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                backgroundColor: '#7E7E7E',
               }
             ],
           }

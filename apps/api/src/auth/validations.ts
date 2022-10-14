@@ -13,5 +13,5 @@ const registerSchema = Joi.object({
 export function validateRegisterMiddleware(req, res, next) {
   const { error } = registerSchema.validate(req.body);
   if (error) return res.status(403).json({ message: `invalid data: ${error?.details[0]?.message}` });
-  next();
+  else next();
 }
