@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { getFilteredVacationsAction, getVacationsAction } from '../../../../store/asyncFunctions/vacations';
 import { useSelector } from 'react-redux';
 import { StyledTypography } from '../../../app-components/header/styles';
+import { store } from '../../../../store';
+import { ACTIONS } from '../../../../store/actions';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -22,8 +24,10 @@ export function FilterSection() {
     const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.checked) {
             getFilteredVacationsAction(authReducer?.user_id);
+            store.dispatch({ type: ACTIONS.VACATIONS.SHOW_ONLY_FOLLOWED })
         } else {
             getVacationsAction();
+            store.dispatch({ type: ACTIONS.VACATIONS.UNDO_SHOW_ONLY_FOLLOWED })
         }
         setFilterFollowed(event.target.checked);
     };

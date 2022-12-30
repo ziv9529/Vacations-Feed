@@ -21,16 +21,17 @@ export function VacationsPage() {
     const authReducer = useSelector((state: any) => state?.authReducer);
     const vacationsReducer = useSelector((state: any) => state?.vacationsReducer);
     const isServiceError = useSelector((state: any) => state.errorReducer);
+    const onlyFollowMode = useSelector((state: any) => state?.vacationsReducer?.isShowOnlyFollowed);
 
     const { vacations } = vacationsReducer;
 
     const initialState: Array<any> = []
     const [followedVacations, setFollowedVacations] = useState(initialState)
     useEffect(() => {
-        getVacationsAction();
+        if (onlyFollowMode === false) getVacationsAction();
     }, [])
     useEffect(() => {
-        getVacationsAction();
+        if (onlyFollowMode === false) getVacationsAction();
         fetchFollowing().catch(console.error);
     }, [vacationsReducer?.follow_action])
 

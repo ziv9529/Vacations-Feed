@@ -37,7 +37,10 @@ export function AppNavBar() {
 
     async function logout() {
         const res = await logOutAction();
-        if (res) navigate("/login")
+        if (res) {
+            alert("user logged out")
+            navigate("/login");
+        }
     }
 
     return (
@@ -49,13 +52,16 @@ export function AppNavBar() {
                     </Typography>
                     : null
             }
-            {routingConfiguration.map((route: RouteConfig) => (
-                <MenuItem key={route.key}>
-                    <Typography textAlign="center">
-                        <Link className="navLink" to={route.path}>{route.label}</Link>
-                    </Typography>
-                </MenuItem>
-            ))}
+            {routingConfiguration.map((route: RouteConfig) => {
+                if (authReducer?.user_first_name && (route.key === "login" || route.key === "register")) return
+                return (
+                    <MenuItem key={route.key}>
+                        <Typography textAlign="center">
+                            <Link className="navLink" to={route.path}>{route.label}</Link>
+                        </Typography>
+                    </MenuItem>
+                )
+            })}
             {
                 authReducer?.user_role === "admin"
                     ?
@@ -76,11 +82,16 @@ export function AppNavBar() {
                     </MenuItem>
                     : null
             }
-            <MenuItem onClick={logout}>
-                <Typography className="navLink" textAlign="center">
-                    Logout
-                </Typography>
-            </MenuItem>
+            {
+                authReducer?.user_first_name
+                    ? <MenuItem onClick={logout}>
+                        <Typography className="navLink" textAlign="center">
+                            Logout
+                        </Typography>
+                    </MenuItem>
+                    : null
+            }
+
         </StyledAppBar>
     )
 

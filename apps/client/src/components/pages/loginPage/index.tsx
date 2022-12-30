@@ -18,7 +18,7 @@ export function LoginPage() {
     }, [])
 
     const [loginData, setLoginData] = useState<LoginState>(initialLoginState);
-
+    
     const isUserLoggin = useSelector((state: any) => state?.authReducer);
     const isServiceError = useSelector((state: any) => state?.errorReducer);
     const isLoading = useSelector((state: any) => state?.loaderReducer?.isLoading);

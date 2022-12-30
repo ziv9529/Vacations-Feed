@@ -2,11 +2,13 @@ import { ACTIONS } from "../actions"
 
 interface IInitialState {
     vacations: Array<any>,
-    follow_action: boolean
+    follow_action: boolean,
+    isShowOnlyFollowed: boolean
 }
 const initialState: IInitialState = {
     vacations: [],
-    follow_action: false
+    follow_action: false,
+    isShowOnlyFollowed: false
 }
 
 export const vacationsReducer = (state: any = initialState, action: { type: string, payload?: any }) => {
@@ -32,6 +34,12 @@ export const vacationsReducer = (state: any = initialState, action: { type: stri
                 })
             })
             return { ...state, vacations: filteredVacations }
+        }
+        case ACTIONS.VACATIONS.SHOW_ONLY_FOLLOWED: {
+            return { ...state, isShowOnlyFollowed: true }
+        }
+        case ACTIONS.VACATIONS.UNDO_SHOW_ONLY_FOLLOWED: {
+            return { ...state, isShowOnlyFollowed: false }
         }
         default:
             return state
